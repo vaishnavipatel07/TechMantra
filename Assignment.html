@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Techmantra</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f7f9fc;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    nav.navbar {
+      background: linear-gradient(90deg, #5e114b, #6dd5ed);
+      color: #e2e5e7;
+      padding: 15px 30px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(134, 21, 240, 0.5);
+      user-select: none;
+    }
+    nav.navbar .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav.navbar ul li {
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav.navbar ul li:hover {
+      color: #ffd54f;
+    }
+
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-self: flex-start;
+    
+    }
+    .info-container {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      max-width: 450px;
+      flex: 1 1 400px;
+      box-shadow: 0 10px 25px rgba(33, 147, 176, 0.15);
+      line-height: 1.6;
+      
+      
+    }
+    .info-container h2 {
+      color: #2193b0;
+      margin-bottom: 18px;
+      font-size: 1.9rem;
+      border-bottom: 3px solid #6dd5ed;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .info-container p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .table-container {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      max-width: 650px;
+      flex: 1 1 550px;
+      box-shadow: 0 10px 25px rgba(109, 213, 237, 0.15);
+      overflow-x: auto;
+    }
+    .table-container h2 {
+      color: #2193b0;
+      margin-bottom: 18px;
+      font-size: 1.9rem;
+      border-bottom: 3px solid #6dd5ed;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      min-width: 400px;
+    }
+    table thead {
+      background: linear-gradient(90deg, #2193b0, #6dd5ed);
+      color: white;
+    }
+    table th, table td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    table tbody tr:hover {
+      background: #e1f5fe;
+    }
+    table a.register-link {
+      color: #2193b0;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+      cursor: pointer;
+    }
+    table a.register-link:hover {
+      border-color: #2193b0;
+    }
+
+    .contact-container {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      max-width: 450px;
+      flex: 1 1 400px;
+      box-shadow: 0 10px 25px rgba(33, 147, 176, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-container h2 {
+      color: #2193b0;
+      margin-bottom: 10px;
+      font-size: 1.9rem;
+      border-bottom: 3px solid #6dd5ed;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .contact-container label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .contact-container input,
+    .contact-container textarea {
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    .contact-container input:focus,
+    .contact-container textarea:focus {
+      border-color: #2193b0;
+      outline: none;
+    }
+    .contact-container button {
+      background: #2193b0;
+      color: white;
+      padding: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    .contact-container button:hover {
+      background: #6dd5ed;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .table-container {
+        max-width: 100%;
+      }
+    }
+    .button{
+      color: rgb(2, 37, 70);
+      padding: 12px;
+      font-weight: 100;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">TechMantra 2k25</div>
+    <ul>
+      <li>Home</li>
+      <li>Events</li>
+      <li> Timetable</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+    
+
+  <div class="main-container">
+    <img src="C:\Users\ZIBACAR MCA LAB1_16\Downloads\img.jpg" height="400px";width="300px";/>
+
+    <section class="info-container">
+      <h2>Events</h2>
+      <p>
+        Welcome to TechMantra 2k25! We are passionate about delivering top-notch
+        solutions tailored for your needs. Our team is dedicated to
+        innovation and excellence, ensuring every project exceeds
+        expectations.
+      </p>
+      <div class="ludo">
+         <h4>Ludo</h3>
+      <p>Ludo is a classic board game that has been a favorite in households across 
+        the world for generations. It is a strategy-based multiplayer game, typically played
+         by 2 to 4 players, and is based on the ancient Indian game Pachisi.</p>
+        <img src="C:\Users\ZIBACAR MCA LAB1_16\Downloads\img2.jpg " height="400px" width="400px"/>
+        <div class="Chess">
+        <h4>Chess</h4>
+       <p>Chess is a two-player strategy board game that has been played for
+         over a thousand years. It is often called the "Game of Kings" and is known 
+         for its deep strategic complexity, intellectual challenge, and global popularity.</p>
+         <img src="C:\Users\ZIBACAR MCA LAB1_16\Downloads\img5.jpg" height="400px" width="400px"/>
+        </div>
+        <div class="Hackthon">
+        <h4>Hackthon</h4>
+        <p> The Hackathon Game is a high-energy, time-bound challenge
+             where developers, designers, and innovators come together to build functional 
+             software or hardware prototypes — often in just 24 to 48 hours.</p>
+         <img src="C:\Users\ZIBACAR MCA LAB1_16\Downloads\img6.jpg" height="400px" width="400px"/>  
+        </div>
+      </section>
+      </div>
+     
+    
+    <section class="table-container">
+      <h2>Events To Apply</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Time</th>
+            <th>Day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ludo</td>
+            <td>10.30</td>
+            <td>Monday</td>
+          </tr>
+          <tr>
+            <td>Hackthon</td>
+            <td>11.00</td>
+            <td>Monday</td>
+          </tr>
+          <tr>
+            <td>chess</td>
+            <td>12.00</td>
+            <td>Tuesday</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button" >
+       <button  onclick="window.location.href='index.html'">Go to Apply</button>
+    </div>
+
+
+    </section>
+
+    <section class="contact-container">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your Name" required />
+        <br>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="your.email@example.com" required />
+        <br>
+        <label for="message">Message</label>
+        <br>
+        <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+        <br>
+
+        <button type="submit">Send Message</button>
+       
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>
